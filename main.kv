@@ -1,0 +1,111 @@
+<WelcomeScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 20
+        Label:
+            text: "🌌 المدينة المفقودة 🌌"
+            font_size: 32
+            bold: True
+        Label:
+            text: "اكتشف أسرار الأسلاف عبر حل الشيفرات المقدسة"
+            font_size: 18
+        Button:
+            text: "ابدأ اللعبة"
+            font_size: 24
+            size_hint_y: 0.3
+            on_release: root.manager.current = 'stage_one'
+
+<StageOneScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+        Label:
+            text: "🗿 المرحلة الأولى: معبد الصمت"
+            font_size: 24
+            bold: True
+        Label:
+            text: "'أنا بداية الزمان، وإن أُضفت إليّ نقطة أصبحت ثوبًا يُلبس.'"
+            font_size: 18
+            italic: True
+        TextInput:
+            id: answer_input
+            hint_text: "اكتب إجابتك هنا"
+            multiline: False
+            font_size: 18
+        Label:
+            id: feedback
+            text: ""
+            font_size: 16
+            color: 1,0,0,1
+        Button:
+            text: "تحقق"
+            font_size: 20
+            size_hint_y: 0.2
+            on_release: root.check_answer()
+
+<StageOneSuccess>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 20
+        Label:
+            text: "✔️ أحسنت!"
+            font_size: 32
+            bold: True
+        Label:
+            text: "لقد اجتزت المرحلة الأولى!"
+            font_size: 20
+        Button:
+            text: "تابع إلى المرحلة الثانية"
+            font_size: 20
+            size_hint_y: 0.3
+            on_release: root.manager.current = 'stage_two'
+
+<StageTwoScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 15
+        Label:
+            text: "🔥 المرحلة الثانية: دائرة الرماد"
+            font_size: 24
+            bold: True
+        Label:
+            text: "'شيء كلما أخذت منه كبر... فما هو؟'"
+            font_size: 18
+            italic: True
+        TextInput:
+            id: answer_input2
+            hint_text: "اكتب إجابتك هنا"
+            multiline: False
+            font_size: 18
+        Label:
+            id: feedback2
+            text: ""
+            font_size: 16
+            color: 1,0,0,1
+        Button:
+            text: "تحقق"
+            font_size: 20
+            size_hint_y: 0.2
+            on_release: root.check_answer()
+
+<StageTwoSuccess>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 20
+        Label:
+            text: "✔️ أحسنت!"
+            font_size: 32
+            bold: True
+        Label:
+            text: "لقد اكتشفت دائرة الرماد!"
+            font_size: 20
+        Button:
+            text: "إلى المرحلة التالية (قريبًا)"
+            font_size: 20
+            size_hint_y: 0.3
+            on_release: app.stop()
