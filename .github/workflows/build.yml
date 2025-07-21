@@ -28,9 +28,8 @@ jobs:
         mkdir -p $HOME/.buildozer/android/platform
         cd $HOME/.buildozer/android/platform
         wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -O sdk-tools.zip
-        unzip -q sdk-tools.zip -d cmdline-tools
-        mkdir -p android-sdk/cmdline-tools
-        mv cmdline-tools android-sdk/cmdline-tools/latest
+        mkdir -p android-sdk/cmdline-tools/latest
+        unzip -q sdk-tools.zip -d android-sdk/cmdline-tools/latest
 
         # إعداد متغيرات البيئة
         export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
